@@ -1,0 +1,2 @@
+sqlite>pragma temp_store_directory='/directory/with/lots/of/space';
+SQL error: near "sqlite": syntax error
