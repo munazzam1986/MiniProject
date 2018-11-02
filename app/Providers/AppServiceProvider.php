@@ -13,7 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+       // dd(DB::table('{car}')->get());
     }
 
     /**
