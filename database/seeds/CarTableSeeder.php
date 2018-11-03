@@ -1,7 +1,5 @@
 <?php
-
 use Illuminate\Database\Seeder;
-
 class CarTableSeeder extends Seeder
 {
     /**
@@ -12,6 +10,7 @@ class CarTableSeeder extends Seeder
     public function run()
     {
         factory(App\Car::class, 50)->create()->each(function ($u) {
+           // $car->posts()->save(factory(App\Post::class)->make());
         });
     }
 }

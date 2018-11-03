@@ -15,10 +15,16 @@ class UserTest extends TestCase
      * @return void
      */
 
-    public function testUsersCollectionCount()
+    public function testInsertCar()
     {
-        $usersCollection = User::All();
+        $car = new Car();
 
-        $this->assertCount(50,$usersCollection);
+        $car-> make = 'Honda';
+
+        $car-> model = 'Accord';
+
+        $car-> year = 2011;
+
+        $this->assertTrue($car->save());
     }
 }
