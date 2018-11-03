@@ -11,15 +11,10 @@ class CarTest extends TestCase
      * New Car Record :
      * @return void
      */
-    public function testCarsMake()
+    public function testCarsModel()
     {
-
         $car = Car::inrandomorder()->first();
-
-        $array = array('FORD', 'HONDA', 'TOYOTA');
-
-        $make = $car->make;
-
-        $this->assertContains(strtoupper($make), $array);
+        $model = $car->model;
+        $this->assertInternalType('string', $model);
     }
 }
