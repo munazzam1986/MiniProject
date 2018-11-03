@@ -15,11 +15,10 @@ class UserTest extends TestCase
      * @return void
      */
 
-    public function testDeleteUser()
+    public function testUsersCollectionCount()
     {
+        $usersCollection = User::All();
 
-        $user = User::where('email', 'mm2468@njit.edu')->first();
-
-        $this->assertTrue($user->delete());
+        $this->assertCount(50,$usersCollection);
     }
 }
