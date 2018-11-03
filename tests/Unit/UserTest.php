@@ -11,11 +11,13 @@ class CarTest extends TestCase
      * New Car Record :
      * @return void
      */
-    public function testCarsCollectionCount()
+    public function testCarYearAsInteger()
     {
-        //get the car collection (all records from cars table)
-        $carsCollection = Car::All();
-        //test if there are 50 records stored in cars table inserted by seeder
-        $this->assertCount(350,$carsCollection);
+        //Pick any random car record
+        $car = Car::inrandomorder()->first();
+
+        $stringYear = $car->year;
+
+        $this->assertTrue(ctype_digit($stringYear));
     }
 }
