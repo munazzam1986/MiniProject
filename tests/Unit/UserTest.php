@@ -11,16 +11,15 @@ class CarTest extends TestCase
      * New Car Record :
      * @return void
      */
-    public function testInsertCar()
+    public function testUpdateCar()
     {
-        //create a new instance of Car
-        $car = new Car();
-        //Make
-        $car-> make = 'Honda';
-        //Model
-        $car-> model = 'Accord';
-        //Year
-        $car-> year = 2011;
+
+        $car = Car::where('make', 'Honda')
+            ->where('model', 'Accord')
+            ->where('year', 2011)
+            ->first();
+
+        $car->year= 2000;
         //test if the new user is saved in the database
         $this->assertTrue($car->save());
     }
