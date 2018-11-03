@@ -11,16 +11,14 @@ class CarTest extends TestCase
      * New Car Record :
      * @return void
      */
-    public function testUpdateCar()
+    public function testDeleteCar()
     {
-
+        //get the user instance for a user which needs to be deleted
         $car = Car::where('make', 'Honda')
             ->where('model', 'Accord')
-            ->where('year', 2011)
+            ->where('year', 2000)
             ->first();
-
-        $car->year= 2000;
-        //test if the new user is saved in the database
-        $this->assertTrue($car->save());
+        //test if the car record  is deleted in the database
+        $this->assertTrue($car->delete());
     }
 }
