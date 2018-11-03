@@ -11,14 +11,11 @@ class CarTest extends TestCase
      * New Car Record :
      * @return void
      */
-    public function testDeleteCar()
+    public function testCarsCollectionCount()
     {
-        //get the user instance for a user which needs to be deleted
-        $car = Car::where('make', 'Honda')
-            ->where('model', 'Accord')
-            ->where('year', 2000)
-            ->first();
-        //test if the car record  is deleted in the database
-        $this->assertTrue($car->delete());
+        //get the car collection (all records from cars table)
+        $carsCollection = Car::All();
+        //test if there are 50 records stored in cars table inserted by seeder
+        $this->assertCount(350,$carsCollection);
     }
 }
