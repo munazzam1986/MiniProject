@@ -11,13 +11,15 @@ class CarTest extends TestCase
      * New Car Record :
      * @return void
      */
-    public function testCarYearAsInteger()
+    public function testCarsMake()
     {
-        //Pick any random car record
+
         $car = Car::inrandomorder()->first();
 
-        $stringYear = $car->year;
+        $array = array('FORD', 'HONDA', 'TOYOTA');
 
-        $this->assertTrue(ctype_digit($stringYear));
+        $make = $car->make;
+
+        $this->assertContains(strtoupper($make), $array);
     }
 }
