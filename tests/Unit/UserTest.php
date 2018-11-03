@@ -1,7 +1,6 @@
 <?php
 
 namespace Tests\Unit;
-
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -15,10 +14,17 @@ class UserTest extends TestCase
      *
      * @return void
      */
-    public function testExample()
+    public function testInsertUser()
     {
-            $user=User::inRandomOrder()->first();
-            $this->assertInternalType('int',$user->id);
-        $this->assertInstanceOf('App\User',$user);
+
+        $user = new User();
+
+        $user-> name = 'Munazzam Mirza';
+
+        $user->email='mm2468@njit.edu';
+
+        $user->password= password_hash('123456',1);
+
+        $this->assertTrue($user->save());
     }
 }
