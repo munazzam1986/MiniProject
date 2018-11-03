@@ -15,13 +15,11 @@ class UserTest extends TestCase
      * @return void
      */
 
-    public function testUpdateUser()
+    public function testDeleteUser()
     {
 
         $user = User::where('email', 'mm2468@njit.edu')->first();
 
-        $user->name= 'Steve Smith';
-
-        $this->assertTrue($user->save());
+        $this->assertTrue($user->delete());
     }
 }
